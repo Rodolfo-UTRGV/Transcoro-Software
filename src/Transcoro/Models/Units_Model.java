@@ -49,10 +49,25 @@ public class Units_Model {
         return false;
     }
 
+    public boolean deleteUnit(int unitID){
+
+        try (PreparedStatement statement = connection.prepareStatement("DELETE FROM `units` WHERE unitId = ?"))
+        {
+            statement.setInt(1, unitID);
+
+            return statement.executeUpdate() >= 1;
+
+        } catch (SQLException e) {
+            System.err.println("An error has occurred: Could not delete unit " + unitID + " - " + e);
+        }
+
+        return false;
+    }
+
     public static ArrayList<Unit> retrieveUnits(){
         ArrayList<Unit> _units = new ArrayList<>();
 
-        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM `keys`")) {
+        try (PreparedStatement statement = connection.prepareStatement("SELECT * FROM `units`")) {
             try (ResultSet set = statement.executeQuery()) {
                 while (set.next()) {
                     int unitId = set.getInt("unitId");

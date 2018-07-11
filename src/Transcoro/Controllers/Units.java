@@ -13,8 +13,10 @@ import Transcoro.Models.Units_Model;
 
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -23,10 +25,12 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Units extends VBox {
 
     private Units_Model model;
+    private VBox root;
 
     @FXML private Label error_message;
     @FXML private Label success_message;
@@ -44,6 +48,7 @@ public class Units extends VBox {
 
     public Units() {
         this.model = new Units_Model();
+        this.root = this;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/resources/view/Units.fxml"));
         fxmlLoader.setRoot(this);
@@ -58,6 +63,8 @@ public class Units extends VBox {
         this.totalUnits.setText(String.valueOf(this.model.totalUnits()));
         this.onServiceUnits.setText(String.valueOf(this.model.onServiceUnits()));
         this.onTrackUnits.setText(String.valueOf(this.model.onTrackUnits()));
+
+        this.fillUnitsTable();
 
     }
 
@@ -103,6 +110,21 @@ public class Units extends VBox {
 
     }
 
+    /**
+     * Fills the Units Table with Units retrieved from the database.
+     */
+    private void fillUnitsTable(){
+        ArrayList<Unit> _currentUnits = this.model.retrieveUnits();
+
+        for(Unit u : _currentUnits) {
+            addUnitRow(u);
+        }
+    }
+
+    /**
+     * Creates a Row into the Units Table
+     * @param unit
+     */
     private void addUnitRow(Unit unit) {
         VBox n = (VBox) this.lookup("#unitTable");
         VBox b = (VBox) n.lookup("#body");
@@ -129,11 +151,30 @@ public class Units extends VBox {
         deleteButton.getStyleClass().add("actionButton");
         actionsBox.getStyleClass().add("column");
 
+        //Creo otro problema es que los botones no se pueden oprimir...
+
         actionsBox.getChildren().add(viewButton);
         actionsBox.getChildren().add(sep1);
         actionsBox.getChildren().add(editButton);
         actionsBox.getChildren().add(sep2);
         actionsBox.getChildren().add(deleteButton);
+
+        /*
+        * ESTO YA LO AVANCEE... Pero te dejo explicacion por si quieres hacer el de edicion...
+        *
+        *
+        * Aqui agrega los eventHandlers de los botones
+        * EJEMPLO:
+        *
+        * DeleteEvent deleteRow = new DeleteEvent(unitID, row);
+        *
+        * Si te fijas puse de parametros el unitID y el row
+        * El Unit ID sera usado para la funcion de eliminacion del modelo [deleteUnit(unitID)]
+        * El row sera usado para la funcion de eliminacion de la tabla [deleteRow(row)] <--- MAS ABAJO TE DEJE UNA EXPLICACION
+        *
+        * deleteButton.setOnAction(deleteRow); <- Asignas el evento a ese boton
+        * */
+
 
         row.getChildren().add(unitNumber);
         row.getChildren().add(unitPlates);
@@ -141,6 +182,17 @@ public class Units extends VBox {
         row.getChildren().add(actionsBox);
 
         b.getChildren().add(row);
+    }
+
+    /**
+     * Remove a Row from the Units Table
+     */
+    private void removeUnitRow(Node row){
+        /*
+        * Supongo que esta funcion lleva un parametro, que seria el Row a eliminar
+        * Identificas el row por VBox.getChildren.remove(el parametro de esta funcion)
+        * y ya igual te dejo el archivo que creo que hice en KeyCam
+        * */
     }
 
     /**
@@ -186,5 +238,29 @@ public class Units extends VBox {
         n.getChildren().add(newMessage);
         appearMessage.play();
         hideMessage.play();
+    }
+
+    /**/
+    class deleteRow implements EventHandler<ActionEvent> {
+        private int unitID;
+        private HBox parent;
+
+        deleteRow(int unitID, Node parent){
+            this.unitID = unitID;
+            this.parent = (HBox) parent;
+        }
+
+        @Override
+        public void handle(ActionEvent event) {
+            VBox r = (VBox) root.lookup("#unitTable");
+            VBox b = (VBox) r.lookup("#body");
+
+
+            for(Node n : b.getChildren())
+                if(n.equals(this.parent)){
+                    //root.deleteRow(n); // << Elimna el row de la tabla... Por alguna razon no funciona so... no se XD piensalo
+                    model.deleteUnit(this.unitID); // << Elimina la unidad de la base de datos...
+                }
+        }
     }
 }
