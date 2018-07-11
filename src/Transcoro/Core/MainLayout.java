@@ -1,3 +1,11 @@
+/**
+ *   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+ **/
 package Transcoro.Core;
 
 import Transcoro.Controllers.TabManager;

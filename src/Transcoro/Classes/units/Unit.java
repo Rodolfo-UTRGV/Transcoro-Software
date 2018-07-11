@@ -1,36 +1,44 @@
-package Transcoro.Classes;
+/**
+ *   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+ **/
+package Transcoro.Classes.units;
 
 import java.sql.Date;
 
 public class Unit {
 
     /**
-     * The unit id.
+     * The units id.
      */
     private int id;
 
     /**
-     * The unit brand.
+     * The units brand.
      */
     private String brand;
 
     /**
-     * The unit model.
+     * The units model.
      */
     private int model;
 
     /**
-     * The unit plates.
+     * The units plates.
      */
     private String plates;
 
     /**
-     * The unit date of purchase.
+     * The units date of purchase.
      */
     private Date purchaseDate;
 
     /**
-     * The unit vehicle identification number.
+     * The units vehicle identification number.
      */
     private String vin;
 

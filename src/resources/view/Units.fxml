@@ -15,14 +15,12 @@
 
 <fx:root styleClass="content" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <VBox id="content-top" styleClass="content-top">
+        <VBox id="content-top" styleClass="content-top">
          <children>
             <Label id="content-title" styleClass="content-title" text="Unidades" />
-             <Label fx:id="error_message" styleClass="error-message" text="" />
-             <Label fx:id="success_message" styleClass="success-message" text="" />
          </children>
       </VBox>
-      <HBox id="panelSection">
+        <HBox id="panelSection">
          <children>
             <HBox styleClass="panel, blue">
                <children>
@@ -32,7 +30,7 @@
                         <Label id="title" text="Total de Unidades" />
                         <HBox id="special-content">
                            <children>
-                              <Label id="number" text="8" />
+                              <Label fx:id="totalUnits" id="number" />
                               <Label id="unit" text="Unidades" />
                            </children>
                         </HBox>
@@ -48,7 +46,7 @@
                         <Label id="title" text="Unidades en Mantenimiento" />
                         <HBox id="special-content">
                            <children>
-                              <Label id="number" text="5" />
+                              <Label fx:id="onServiceUnits" id="number" />
                               <Label id="unit" text="Unidades" />
                            </children>
                         </HBox>
@@ -64,7 +62,7 @@
                         <Label id="title" text="Unidades en Trayecto" />
                         <HBox id="special-content">
                            <children>
-                              <Label id="number" text="2" />
+                              <Label fx:id="onTrackUnits" id="number" />
                               <Label id="unit" text="Unidades" />
                            </children>
                         </HBox>
@@ -74,72 +72,21 @@
             </HBox>
          </children>
       </HBox>
-        <VBox styleClass="table">
+        <VBox id="unitTable" styleClass="table">
             <children>
-                <HBox styleClass="head">
+                <HBox id="head" styleClass="head">
                    <children>
                         <Label styleClass="columnHeader" text="Numero" />
+                        <Label styleClass="columnHeader" text="Placas" />
                         <Label styleClass="columnHeader" text="Tipo" />
                         <Label styleClass="columnHeader" text="Acciones" />
                    </children>
                 </HBox>
-                <VBox styleClass="body">
+                <VBox id="body" styleClass="body">
                    <children>
-                       <HBox fx:id="Empty" styleClass="row">
+                       <HBox id="body_Row" styleClass="row, emptyRow">
                            <children>
-                               <Label styleClass="column" text="No hay unidades" />
-                           </children>
-                       </HBox>
-                       <HBox styleClass="row">
-                           <children>
-                               <Label styleClass="column" text="204" />
-                               <Label styleClass="column" text="Van" />
-                               <HBox styleClass="column">
-                                   <children>
-                                       <Button styleClass="actionButton" text="Editar" />
-                                       <Label styleClass="actionLabel" text="||" />
-                                       <Button styleClass="actionButton" text="Borrar" />
-                                   </children>
-                               </HBox>
-                           </children>
-                       </HBox>
-                       <HBox styleClass="row">
-                           <children>
-                               <Label styleClass="column" text="204" />
-                               <Label styleClass="column" text="Van" />
-                               <HBox styleClass="column">
-                                   <children>
-                                       <Button styleClass="actionButton" text="Editar" />
-                                       <Label styleClass="actionLabel" text="||" />
-                                       <Button styleClass="actionButton" text="Borrar" />
-                                   </children>
-                               </HBox>
-                           </children>
-                       </HBox>
-                       <HBox styleClass="row">
-                           <children>
-                               <Label styleClass="column" text="204" />
-                               <Label styleClass="column" text="Van" />
-                               <HBox styleClass="column">
-                                   <children>
-                                       <Button styleClass="actionButton" text="Editar" />
-                                       <Label styleClass="actionLabel" text="||" />
-                                       <Button styleClass="actionButton" text="Borrar" />
-                                   </children>
-                               </HBox>
-                           </children>
-                       </HBox>
-                       <HBox styleClass="row">
-                           <children>
-                               <Label styleClass="column" text="204" />
-                               <Label styleClass="column" text="Van" />
-                               <HBox styleClass="column">
-                                   <children>
-                                       <Button styleClass="actionButton" text="Editar" />
-                                       <Label styleClass="actionLabel" text="||" />
-                                       <Button styleClass="actionButton" text="Borrar" />
-                                   </children>
-                               </HBox>
+                               <Label text="No hay unidades" />
                            </children>
                        </HBox>
                    </children>

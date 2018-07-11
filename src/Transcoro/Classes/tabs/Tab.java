@@ -6,7 +6,7 @@
  *
  *  Transcoro Software 2018 || The power of proyects
  **/
-package Transcoro.Classes;
+package Transcoro.Classes.tabs;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;

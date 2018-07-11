@@ -27,10 +27,13 @@
 }
 
 .table .body .row {
+    -fx-font-size: 14;
+	-fx-font-weight: 200;
+    -fx-font-family: Roboto;
+    -fx-background-color: #ffffff;
 }
 
 .table .body .row .column{
-    -fx-background-color: #ffffff;
 	-fx-text-fill: #000000;
 	-fx-border-color: #cacaca;
 	-fx-border-style: solid;
@@ -41,9 +44,15 @@
 .table .body .row .column{
     -fx-padding: 2 5 2 5;
     -fx-pref-width: 300;
-	-fx-font-size: 14;
-	-fx-font-weight: 200;
-	-fx-font-family: Roboto;
+}
+
+.table .body .row.emptyRow {
+    -fx-alignment: CENTER;
+	-fx-border-color: #cacaca;
+	-fx-border-style: solid;
+    -fx-border-width: 0 1 1 1;
+    -fx-padding: 2 5 2 5;
+
 }
 
 .table .body .row #emptyRow{
