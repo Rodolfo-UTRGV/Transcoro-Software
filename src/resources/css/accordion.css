@@ -52,3 +52,7 @@
 	-fx-padding: 12;
 	-fx-rotate: 0;
 }
+
+#unitFormAccordion {
+	-fx-max-width: 900;
+}

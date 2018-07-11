@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.net.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
@@ -14,13 +15,13 @@
 
 <fx:root styleClass="content" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-      <HBox styleClass="content-top">
+      <VBox id="content-top" styleClass="content-top">
          <children>
-            <Label styleClass="content-title" text="Unidades" />
+            <Label id="content-title" styleClass="content-title" text="Unidades" />
+             <Label fx:id="error_message" styleClass="error-message" text="" />
+             <Label fx:id="success_message" styleClass="success-message" text="" />
          </children>
-      </HBox>
-        <Label styleClass="error-message" text="Ha ocurrido un error" />
-        <Label styleClass="success-message" text="¡Cambio realizado correctamente!" />
+      </VBox>
       <HBox id="panelSection">
          <children>
             <HBox styleClass="panel, blue">
@@ -73,91 +74,152 @@
             </HBox>
          </children>
       </HBox>
-      <VBox styleClass="table">
-         <children>
-            <HBox styleClass="head">
-               <children>
-                    <Label styleClass="columnHeader" text="Numero" />
-                    <Label styleClass="columnHeader" text="Tipo" />
-                    <Label styleClass="columnHeader" text="Acciones" />
-               </children>
-            </HBox>
-            <VBox styleClass="body">
-               <children>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-        <TitledPane styleClass="accordionMetro" animated="true" text="Registrar Unidad">
+        <VBox styleClass="table">
+            <children>
+                <HBox styleClass="head">
+                   <children>
+                        <Label styleClass="columnHeader" text="Numero" />
+                        <Label styleClass="columnHeader" text="Tipo" />
+                        <Label styleClass="columnHeader" text="Acciones" />
+                   </children>
+                </HBox>
+                <VBox styleClass="body">
+                   <children>
+                       <HBox fx:id="Empty" styleClass="row">
+                           <children>
+                               <Label styleClass="column" text="No hay unidades" />
+                           </children>
+                       </HBox>
+                       <HBox styleClass="row">
+                           <children>
+                               <Label styleClass="column" text="204" />
+                               <Label styleClass="column" text="Van" />
+                               <HBox styleClass="column">
+                                   <children>
+                                       <Button styleClass="actionButton" text="Editar" />
+                                       <Label styleClass="actionLabel" text="||" />
+                                       <Button styleClass="actionButton" text="Borrar" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </HBox>
+                       <HBox styleClass="row">
+                           <children>
+                               <Label styleClass="column" text="204" />
+                               <Label styleClass="column" text="Van" />
+                               <HBox styleClass="column">
+                                   <children>
+                                       <Button styleClass="actionButton" text="Editar" />
+                                       <Label styleClass="actionLabel" text="||" />
+                                       <Button styleClass="actionButton" text="Borrar" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </HBox>
+                       <HBox styleClass="row">
+                           <children>
+                               <Label styleClass="column" text="204" />
+                               <Label styleClass="column" text="Van" />
+                               <HBox styleClass="column">
+                                   <children>
+                                       <Button styleClass="actionButton" text="Editar" />
+                                       <Label styleClass="actionLabel" text="||" />
+                                       <Button styleClass="actionButton" text="Borrar" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </HBox>
+                       <HBox styleClass="row">
+                           <children>
+                               <Label styleClass="column" text="204" />
+                               <Label styleClass="column" text="Van" />
+                               <HBox styleClass="column">
+                                   <children>
+                                       <Button styleClass="actionButton" text="Editar" />
+                                       <Label styleClass="actionLabel" text="||" />
+                                       <Button styleClass="actionButton" text="Borrar" />
+                                   </children>
+                               </HBox>
+                           </children>
+                       </HBox>
+                   </children>
+                </VBox>
+            </children>
+        </VBox>
+        <TitledPane animated="true" id="unitFormAccordion" styleClass="accordionMetro" text="Registrar Unidad">
             <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <VBox id="unitForm" minHeight="0.0" minWidth="0.0" styleClass="tableForm">
                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <HBox id="unitNumberBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitNumberLabel" styleClass="rowFormLabel" text="Número de unidad" />
+                                    </children>
+                                </VBox>
+                                <TextField fx:id="register_unitNumber" promptText="Número de unidad" />
+                            </children>
+                        </HBox>
+                        <HBox id="unitPlatesBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitPlatesLabel" styleClass="rowFormLabel" text="Placas de la unidad" />
+                                    </children>
+                                </VBox>
+                                <TextField fx:id="register_unitPlates" promptText="Placas" />
+                            </children>
+                        </HBox>
+                        <HBox id="unitVINBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitVINLabel" styleClass="rowFormLabel" text="NIV" />
+                                        <Label id="unitVINInformation" styleClass="rowFormInformation" text="(Número de Identificación Vehicular)" />
+                                    </children>
+                                </VBox>
+                                <TextField fx:id="register_unitVIN" promptText="NIV" />
+                            </children>
+                        </HBox>
+                        <HBox id="unitBrandBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitBrandLabel" styleClass="rowFormLabel" text="Marca" />
+                                    </children>
+                                </VBox>
+                                <ComboBox fx:id="register_unitBrand" editable="true" promptText="Marca" />
+                            </children>
+                        </HBox>
+                        <HBox id="unitModelBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitModelLabel" styleClass="rowFormLabel" text="Modelo" />
+                                    </children>
+                                </VBox>
+                                <ComboBox fx:id="register_unitModel" editable="true" promptText="Modelo" />
+                            </children>
+                        </HBox>
+                        <HBox id="unitPurchaseDateBox" styleClass="rowForm">
+                            <children>
+                                <VBox styleClass="columnForm">
+                                    <children>
+                                        <Label id="unitPurchaseDateLabel" styleClass="rowFormLabel" text="Fecha de Compra" />
+                                    </children>
+                                </VBox>
+                                <DatePicker fx:id="register_unitPurchaseDate" promptText="Fecha de compra" />
+                            </children>
+                        </HBox>
+                        <HBox styleClass="rowForm, buttonsRowForm">
+                            <children>
+                                <Button fx:id="register_unitSubmit" styleClass="submit" text="Registrar" onAction="#handleSubmitButtonAction"/>
+                            </children>
+                        </HBox>
                     </children>
-                </AnchorPane>
+                </VBox>
             </content>
         </TitledPane>
-      <TitledPane styleClass="accordionMetro" animated="true" text="Registrar Unidad">
-        <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
-               </children>
-            </AnchorPane>
-        </content>
-      </TitledPane>
     </children>
     <stylesheets>
         <URL value="@../css/fonts.css" />

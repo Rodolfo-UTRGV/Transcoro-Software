@@ -17,6 +17,7 @@
     -fx-alignment: CENTER_LEFT;
     -fx-pref-height: 55;
     -fx-padding: 0 0 0 15;
+    -fx-spacing: 10;
 }
 
 .content-top .content-title {

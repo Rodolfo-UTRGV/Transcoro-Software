@@ -7,6 +7,7 @@
  *  Transcoro Software 2018 || The power of proyects
 **/
 
+/* REGULAR TABLE */
 .table {
     -fx-max-width: 900;
     -fx-padding: 0 10;
@@ -25,7 +26,7 @@
 .table .body {
 }
 
-.table .body . row {
+.table .body .row {
 }
 
 .table .body .row .column{
@@ -45,9 +46,76 @@
 	-fx-font-family: Roboto;
 }
 
+.table .body .row #emptyRow{
+    -fx-alignment: CENTER;
+    -fx-border-color: #cacaca;
+	-fx-border-style: solid;
+    -fx-border-width: 0 1 1 1;
+    -fx-font-family: Roboto;
+    -fx-font-size: 14;
+    -fx-padding: 2 5 2 5;
+}
+
 .table .body .row .column .actionButton {
     -fx-background-color: transparent;
     -fx-padding: 0;
     -fx-text-fill: #0683f1;
     -fx-underline: true;
+}
+
+/* FORM TABLE */
+.tableForm {
+    -fx-max-width: Infinity;
+    -fx-padding: 0;
+}
+
+.tableForm .rowForm {
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #cacaca;
+	-fx-border-style: solid;
+	-fx-border-width: 0 0 1 0;
+    -fx-padding: 0;
+    -fx-min-height: 70;
+    -fx-spacing: 20;
+}
+
+.tableForm .rowForm.buttonsRowForm {
+    -fx-padding: 0 10;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.tableForm .buttonsRowForm Button.submit {
+    -fx-background-color: rgb(0, 109, 0);
+    -fx-background-radius: 1;
+    -fx-font-family: Roboto;
+    -fx-font-size: 16;
+    -fx-padding: 7 20;
+    -fx-text-fill: white;
+}
+
+.tableForm .buttonsRowForm Button.submit:hover {
+    -fx-background-color: rgb(11, 163, 11);
+}
+
+.tableForm .rowForm TextField {
+}
+
+.tableForm .rowForm .columnForm {
+    -fx-border-color: #cacaca;
+	-fx-border-style: solid;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 15 5;
+    -fx-pref-width: 200;
+}
+
+.tableForm .rowForm .columnForm .rowFormLabel {
+    -fx-font-family: Roboto;
+    -fx-font-size: 16;
+    -fx-font-weight: BOLD;
+}
+
+.tableForm .rowForm .columnForm .rowFormInformation {
+    -fx-font-family: Roboto;
+    -fx-font-size: 12; 
+    -fx-text-fill: rgb(119, 119, 119);
 }
