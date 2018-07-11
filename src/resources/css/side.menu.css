@@ -1,0 +1,79 @@
+/**
+*   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+**/
+
+#sideMenu #userDisplay {
+}
+
+#sideMenu #userDisplay VBox {
+    -fx-padding: 10;
+}
+
+#sideMenu #userDisplay VBox #userWelcome {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0060a5;
+}
+
+#sideMenu #userDisplay VBox #userRankName {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 11;
+}
+
+#sideMenu #tabsMenu {
+
+}
+
+#sideMenu #tabsMenu Button{
+    -fx-font-family: Roboto;
+    -fx-background-color: transparent;
+    -fx-max-width: Infinity;
+    -fx-text-fill: #6a707e;
+    -fx-background-radius: 0px;
+    -fx-alignment: BASELINE-LEFT;
+    -fx-padding: 10 0 10 30;
+}
+
+#sideMenu #tabsMenu Button:hover {
+    -fx-text-fill: #2290ff;
+    -fx-background-color: #2290ff, #fafafa;
+    -fx-background-insets: 0, 0 0 0 3;
+}
+
+#Empleados {
+    -fx-graphic: url('../images/menuIcons/employees-g24.png');
+}
+
+#Unidades {
+    -fx-graphic: url('../images/menuIcons/units-g24.png');
+}
+
+#Clientes {
+    -fx-graphic: url('../images/menuIcons/clients-g24.png');
+}
+
+#Viajes {
+    -fx-graphic: url('../images/menuIcons/trips-g24.png');
+}
+
+#Empleados:hover {
+    -fx-graphic: url('../images/menuIcons/employees-b24.png');
+}
+
+#Unidades:hover {
+    -fx-graphic: url('../images/menuIcons/units-b24.png');
+}
+
+#Clientes:hover {
+    -fx-graphic: url('../images/menuIcons/clients-b24.png');
+}
+
+#Viajes:hover {
+    -fx-graphic: url('../images/menuIcons/trips-b24.png');
+}

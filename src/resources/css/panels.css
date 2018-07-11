@@ -1,0 +1,74 @@
+/**
+*   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+**/
+
+.panel {
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-padding: 5 10 5 10;
+    -fx-pref-height: 65;
+    -fx-pref-width: 300;
+}
+
+.panel #information {
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 80;
+    -fx-spacing: 5;
+}
+
+.panel #information #title {
+    -fx-font-size: 13;
+}
+
+.panel #information #special-content {
+    -fx-alignment: CENTER_LEFT;
+    -fx-pref-height: 35;
+    -fx-spacing: 5;
+}
+
+.panel #information #special-content #number {
+    -fx-font-size: 24;
+    -fx-font-weight: BOLD;
+    -fx-text-fill: #1e2d39;
+}
+
+.panel #information #special-content #unit {
+    -fx-font-size: 12;
+    -fx-text-fill: #1e2d39;
+}
+
+.panel #information #title,
+.panel #information #special-content #number,
+.panel #information #special-content #unit {
+    -fx-font-family: Roboto;
+}
+
+.panel.fuchsia {
+    -fx-background-color: #b10a5d;
+}
+
+.panel.blue {
+    -fx-background-color: #19628e;
+}
+
+.panel.green {
+    -fx-background-color: #198e4e;
+}
+
+.panel.green #information #title,
+.panel.green #information #special-content #number,
+.panel.green #information #special-content #unit,
+.panel.blue #information #title,
+.panel.blue #information #special-content #number,
+.panel.blue #information #special-content #unit,
+.panel.fuchsia #information #title,
+.panel.fuchsia #information #special-content #number,
+.panel.fuchsia #information #special-content #unit {
+    -fx-text-fill: #ffffff;
+}

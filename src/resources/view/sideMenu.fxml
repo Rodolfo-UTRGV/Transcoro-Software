@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<?import java.net.URL?>
+<fx:root id="sideMenu" fx:id="sideMenu" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+      <HBox id="userDisplay" fx:id="userDisplay">
+         <children>
+            <VBox>
+               <children>
+                  <ImageView id="userProfile" fx:id="userProfile" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT">
+               <children>
+                  <Label id="userWelcome" fx:id="userWelcome" />
+                  <Label id="userRankName" fx:id="userRankName" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox id="tabsMenu" fx:id="tabsMenu" />
+    </children>
+    <stylesheets>
+        <URL value="@../css/fonts.css" />
+        <URL value="@../css/side.menu.css" />
+    </stylesheets>
+</fx:root>

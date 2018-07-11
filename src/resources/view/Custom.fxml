@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import java.net.URL?>
+<fx:root type="javafx.scene.layout.BorderPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+      <VBox fx:id="sideMenu" id="sideMenu" />
+    </left>
+     <top>
+        <HBox fx:id="upperMenu" id="upperMenu" />
+     </top>
+     <center>
+         <VBox fx:id="contentCenter" id="contentCenter">
+            <children>
+                <ScrollPane fx:id="contentScroll" id="contentScroll" />
+            </children>
+         </VBox>
+     </center>
+    <stylesheets>
+        <URL value="@../css/fonts.css" />
+        <URL value="@../css/layout.css" />
+    </stylesheets>
+</fx:root>

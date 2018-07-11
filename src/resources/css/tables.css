@@ -1,0 +1,53 @@
+/**
+*   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+**/
+
+.table {
+    -fx-max-width: 900;
+    -fx-padding: 0 10;
+}
+
+.table .head {
+    -fx-background-color: #353535;
+    -fx-background-radius:  2 2 0 0;
+    -fx-padding: 5 5 5;
+}
+
+.table .head .columnHeader{
+	-fx-text-fill: #ffffff;
+}
+
+.table .body {
+}
+
+.table .body . row {
+}
+
+.table .body .row .column{
+    -fx-background-color: #ffffff;
+	-fx-text-fill: #000000;
+	-fx-border-color: #cacaca;
+	-fx-border-style: solid;
+	-fx-border-width: 0 1 1 1;
+}
+
+.table .head .columnHeader,
+.table .body .row .column{
+    -fx-padding: 2 5 2 5;
+    -fx-pref-width: 300;
+	-fx-font-size: 14;
+	-fx-font-weight: 200;
+	-fx-font-family: Roboto;
+}
+
+.table .body .row .column .actionButton {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-text-fill: #0683f1;
+    -fx-underline: true;
+}

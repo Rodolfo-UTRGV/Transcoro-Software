@@ -1,0 +1,54 @@
+/**
+*   _____
+ * () | ,_   _,         ,   _   _   ,_   _
+ *    |/  | / |  /|/|  / \_/   / \_/  | / \_
+ *  (/    |/\/|_/ | |_/ \/ \__/\_/    |/\_/
+ *
+ *  Transcoro Software 2018 || The power of proyects
+**/
+
+.accordionMetro{
+	-fx-skin: none;
+	-fx-text-fill: #fff;
+}
+
+.accordionMetro:focused {
+	-fx-text-fill: white;
+}
+
+.accordionMetro > .title {
+	-fx-font-size: 16;
+	-fx-font-family: Segoe UI Light;
+	-fx-background-color: rgb(58, 58, 58);
+	-fx-background-insets: 0;
+	-fx-background-radius: 0;
+	-fx-padding: 10 15;
+}
+
+.accordionMetro:focused > .title {
+	-fx-color: -fx-focus-color;
+}
+
+.accordionMetro > .title > .arrow-button {
+	-fx-background-color: null;
+	-fx-background-insets: 10 20 30 40;
+	-fx-background-radius: 0;
+	-fx-padding: 0 10; /* 0 3 0 0 */
+}
+
+.accordionMetro > .title > .arrow-button .arrow {
+	-fx-background-image: url('../images/icons/accordion-expanded.png');
+	-fx-background-repeat: no-repeat;
+	-fx-rotate: 0;
+	-fx-background-color: transparent;
+	-fx-background-insets: 0 0 0 0;
+	-fx-padding: 12;
+	-fx-shape: null;
+}
+
+.accordionMetro:collapsed > .title > .arrow-button .arrow {
+	-fx-background-image: url('../images/icons/accordion-collapsed.png');
+	-fx-background-repeat: no-repeat;
+	-fx-padding: 12;
+	-fx-rotate: 0;
+}
