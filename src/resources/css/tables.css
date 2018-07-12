@@ -38,6 +38,7 @@
 	-fx-border-color: #cacaca;
 	-fx-border-style: solid;
 	-fx-border-width: 0 1 1 1;
+	-fx-spacing: 5;
 }
 
 .table .head .columnHeader,
@@ -70,6 +71,10 @@
     -fx-padding: 0;
     -fx-text-fill: #0683f1;
     -fx-underline: true;
+}
+
+.table .body .row .column .actionButton {
+    -fx-text-fill: #0683f1;
 }
 
 /* FORM TABLE */
