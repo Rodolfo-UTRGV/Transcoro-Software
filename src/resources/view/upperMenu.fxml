@@ -12,158 +12,46 @@
 <?import javafx.scene.image.Image?>
 <?import java.net.URL?>
 
-<fx:root styleClass="content" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-      <HBox styleClass="content-top">
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="10.0">
          <children>
-            <Label styleClass="content-title" text="Unidades" />
+            <Button mnemonicParsing="false" />
+            <ImageView fitHeight="100.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/transcoro-logo.png" />
+               </image>
+            </ImageView>
+            <Label text="Transcoro S.A. de C.V." textFill="#363636">
+               <font>
+                  <Font name="Roboto Regular" size="14.0" />
+               </font>
+            </Label>
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </HBox>
-        <Label styleClass="error-message" text="Ha ocurrido un error" />
-        <Label styleClass="success-message" text="¡Cambio realizado correctamente!" />
-      <HBox id="panelSection">
+      <HBox alignment="CENTER_RIGHT" spacing="5.0">
          <children>
-            <HBox styleClass="panel, blue">
-               <children>
-                  <VBox id="icon" />
-                  <VBox id="information">
-                     <children>
-                        <Label id="title" text="Total de Unidades" />
-                        <HBox id="special-content">
-                           <children>
-                              <Label id="number" text="8" />
-                              <Label id="unit" text="Unidades" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox styleClass="panel, fuchsia">
-               <children>
-                  <VBox id="icon" />
-                  <VBox id="information">
-                     <children>
-                        <Label id="title" text="Unidades en Mantenimiento" />
-                        <HBox id="special-content">
-                           <children>
-                              <Label id="number" text="5" />
-                              <Label id="unit" text="Unidades" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox styleClass="panel, green">
-               <children>
-                  <VBox id="icon" />
-                  <VBox id="information">
-                     <children>
-                        <Label id="title" text="Unidades en Trayecto" />
-                        <HBox id="special-content">
-                           <children>
-                              <Label id="number" text="2" />
-                              <Label id="unit" text="Unidades" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/profile.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <Label text="Rodolfo Contreras" textFill="#1b1b1b">
+               <font>
+                  <Font name="Roboto Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </HBox>
-      <VBox styleClass="table">
-         <children>
-            <HBox styleClass="head">
-               <children>
-                    <Label styleClass="columnHeader" text="Numero" />
-                    <Label styleClass="columnHeader" text="Tipo" />
-                    <Label styleClass="columnHeader" text="Acciones" />
-               </children>
-            </HBox>
-            <VBox styleClass="body">
-               <children>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-                   <HBox styleClass="row">
-                       <children>
-                           <Label styleClass="column" text="204" />
-                           <Label styleClass="column" text="Van" />
-                           <HBox styleClass="column">
-                               <children>
-                                   <Button styleClass="actionButton" text="Editar" />
-                                   <Label styleClass="actionLabel" text="||" />
-                                   <Button styleClass="actionButton" text="Borrar" />
-                               </children>
-                           </HBox>
-                       </children>
-                   </HBox>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-        <TitledPane styleClass="accordionMetro" animated="true" text="Registrar Unidad">
-            <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                    <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
-                    </children>
-                </AnchorPane>
-            </content>
-        </TitledPane>
-      <TitledPane styleClass="accordionMetro" animated="true" text="Registrar Unidad">
-        <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <VBox prefHeight="200.0" prefWidth="100.0" />
-               </children>
-            </AnchorPane>
-        </content>
-      </TitledPane>
-    </children>
-    <stylesheets>
-        <URL value="@../css/fonts.css" />
-        <URL value="@../css/content.css" />
-        <URL value="@../css/panels.css" />
-        <URL value="@../css/tables.css" />
-        <URL value="@../css/accordion.css" />
-    </stylesheets>
-</fx:root>
+   </children>
+</HBox>

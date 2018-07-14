@@ -10,6 +10,7 @@
 .content {
     -fx-background-color: #fafafa;
     -fx-max-width: Infinity;
+    -fx-padding: 20 0;
     -fx-spacing: 15;
 }
 

@@ -24,17 +24,17 @@ public class Environment extends Application {
     /**
      * Major version of the application.
      */
-    public final static int MAJOR = 1;
+    public final static int MAJOR = 0;
 
     /**
      * Minor version of the application.
      */
-    public final static int MINOR = 2;
+    public final static int MINOR = 1;
 
     /**
      * Stable build version of the application.
      */
-    public final static int BUILD = 3;
+    public final static int BUILD = 14;
 
     /**
      * Version as string.

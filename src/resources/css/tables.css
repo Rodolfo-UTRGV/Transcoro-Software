@@ -96,6 +96,7 @@
 .tableForm .rowForm.buttonsRowForm {
     -fx-padding: 0 10;
     -fx-alignment: CENTER_RIGHT;
+    -fx-border-width: 0 0 0 0;
 }
 
 .tableForm .buttonsRowForm Button.submit {

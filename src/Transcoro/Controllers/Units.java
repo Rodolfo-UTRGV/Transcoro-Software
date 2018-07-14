@@ -104,14 +104,25 @@ public class Units extends VBox {
         }
     }
 
+    private void checkIsEmptyUnitsTable(){
+
+    }
+
     /**
      * Fills the Units Table with Units retrieved from the database.
      */
     private void fillUnitsTable(){
         ArrayList<Unit> _currentUnits = this.model.retrieveUnits();
 
-        for(Unit u : _currentUnits) {
-            addUnitRow(u);
+        if(_currentUnits.size() > 0) {
+            VBox n = (VBox) this.lookup("#unitTable");
+            VBox b = (VBox) n.lookup("#body");
+
+            b.getChildren().remove(0);
+
+            for (Unit u : _currentUnits) {
+                addUnitRow(u);
+            }
         }
     }
 
@@ -151,9 +162,11 @@ public class Units extends VBox {
         actionsBox.getChildren().add(sep2);
         actionsBox.getChildren().add(deleteButton);
 
-        DeleteRowEvent deleteRow = new DeleteRowEvent(unit.getId(), row);
+        EditUnitEvent editUnit = new EditUnitEvent();
+        editButton.setOnAction(editUnit);
 
-        deleteButton.setOnAction(deleteRow);
+        DeleteUnitEvent deleteUnit = new DeleteUnitEvent(unit.getId(), row);
+        deleteButton.setOnAction(deleteUnit);
 
 
         row.getChildren().add(unitNumber);
@@ -172,6 +185,18 @@ public class Units extends VBox {
         VBox b = (VBox) n.lookup("#body");
 
         b.getChildren().remove(row);
+
+        if(b.getChildren().size() <= 0){
+            HBox emptyRow = new HBox();
+            Label emptyRowMsg = new Label("No hay unidades");
+
+            emptyRow.getChildren().add(emptyRowMsg);
+
+            emptyRow.setId("body_Row");
+            emptyRow.getStyleClass().add("row");
+            emptyRow.getStyleClass().add("emptyRow");
+            b.getChildren().add(0, emptyRow);
+        }
     }
 
     /**
@@ -219,13 +244,22 @@ public class Units extends VBox {
     }
 
     /**
-     * Delete Row Event Class
+     * View unit Event Class
      */
-    class DeleteRowEvent implements EventHandler<ActionEvent> {
+    class EditUnitEvent implements EventHandler<ActionEvent> {
+        @Override
+        public void handle(ActionEvent event) {
+        }
+    }
+
+    /**
+     * Delete unit Event Class
+     */
+    class DeleteUnitEvent implements EventHandler<ActionEvent> {
         private int unitID;
         private Node parent;
 
-        DeleteRowEvent(int unitID, Node parent){
+        DeleteUnitEvent(int unitID, Node parent){
             this.unitID = unitID;
             this.parent = parent;
         }
@@ -234,6 +268,7 @@ public class Units extends VBox {
         public void handle(ActionEvent event) {
             root.removeUnitRow(this.parent);
             model.deleteUnit(this.unitID);
+            root.addMessage(0, "La unidad " + this.unitID + " ha sido eliminada correctamente.");
         }
     }
 }

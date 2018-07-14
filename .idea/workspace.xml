@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transcoro/Controllers/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transcoro/Controllers/Units.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Transcoro/Environment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transcoro/Environment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/content.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/css/content.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/css/tables.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/css/tables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/Units.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/Units.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/view/upperMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/view/upperMenu.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,14 +68,29 @@
       <file leaf-file-name="Units.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Transcoro/Controllers/Units.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+            <state relative-caret-position="135">
+              <caret line="117" selection-start-line="117" selection-end-line="120" selection-end-column="38" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Units.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/view/Units.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="88" column="59" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="59" />
+              <folding>
+                <element signature="n#VBox#0;n#children#0;n#fx:root#0;n#!!top" />
+                <element signature="n#HBox#0;n#children#0;n#fx:root#0;n#!!top" />
+                <element signature="n#TitledPane#0;n#children#0;n#fx:root#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -92,6 +110,8 @@
       <find>body</find>
       <find>error-message</find>
       <find>error_message</find>
+      <find>rowForm</find>
+      <find>fill</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -108,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Transcoro/Environment.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Models/Units.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Classes/Unit.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Classes/Unit/UnitType.java" />
@@ -116,19 +135,21 @@
         <option value="$PROJECT_DIR$/src/Transcoro/Classes/units/UnitType.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Classes/units/Unit.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Core/MainLayout.java" />
-        <option value="$PROJECT_DIR$/src/resources/view/Units.fxml" />
         <option value="$PROJECT_DIR$/src/Transcoro/Models/Units_Model.java" />
+        <option value="$PROJECT_DIR$/src/resources/view/Units.fxml" />
+        <option value="$PROJECT_DIR$/src/resources/css/content.css" />
         <option value="$PROJECT_DIR$/src/resources/css/tables.css" />
+        <option value="$PROJECT_DIR$/src/Transcoro/Environment.java" />
         <option value="$PROJECT_DIR$/src/Transcoro/Controllers/Units.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1812" />
-    <option name="y" value="-8" />
-    <option name="width" value="1376" />
-    <option name="height" value="754" />
+    <option name="x" value="108" />
+    <option name="y" value="65" />
+    <option name="width" value="1292" />
+    <option name="height" value="695" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -162,7 +183,7 @@
               <item name="Transcoro" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Transcoro" type="b2602c69:ProjectViewProjectNode" />
@@ -347,14 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531352225135</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Boton &quot;Eliminar&quot; funcionando">
+      <created>1531402927664</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1531402927664</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-8" width="1376" height="754" extended-state="6" />
+    <frame x="108" y="65" width="1292" height="695" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -366,11 +394,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286385" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36206895" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5612009" visible="true" weight="0.29117647" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.5612009" visible="true" weight="0.31034482" />
       <window_info id="Structure" order="1" sideWeight="0.43879908" side_tool="true" weight="0.29136163" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -460,7 +488,8 @@
     <MESSAGE value="Inserción de unidad programado." />
     <MESSAGE value="Inserción de unidad programado y mejorado." />
     <MESSAGE value="Empezado funciones de eliminacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Empezado funciones de eliminacion" />
+    <MESSAGE value="Boton &quot;Eliminar&quot; funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="Boton &quot;Eliminar&quot; funcionando" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -538,13 +567,6 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/Transcoro/Environment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Transcoro.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -605,10 +627,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transcoro/Models/Units_Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/css/content.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/css/tables.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="95" column="36" lean-forward="true" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Transcoro/Environment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/view/Units.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="86" column="70" lean-forward="true" selection-start-line="86" selection-start-column="70" selection-end-line="86" selection-end-column="70" />
+        <state relative-caret-position="221">
+          <caret line="88" column="59" lean-forward="true" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="59" />
           <folding>
             <element signature="n#VBox#0;n#children#0;n#fx:root#0;n#!!top" />
             <element signature="n#HBox#0;n#children#0;n#fx:root#0;n#!!top" />
@@ -618,24 +668,10 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Transcoro/Models/Units_Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/css/tables.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Transcoro/Controllers/Units.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+        <state relative-caret-position="135">
+          <caret line="117" selection-start-line="117" selection-end-line="120" selection-end-column="38" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />

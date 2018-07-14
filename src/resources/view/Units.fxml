@@ -93,7 +93,7 @@
                 </VBox>
             </children>
         </VBox>
-        <TitledPane animated="true" id="unitFormAccordion" styleClass="accordionMetro" text="Registrar Unidad">
+        <TitledPane animated="true" expanded="false" id="unitFormAccordion" styleClass="accordionMetro" text="Registrar Unidad">
             <content>
                 <VBox id="unitForm" minHeight="0.0" minWidth="0.0" styleClass="tableForm">
                     <children>
