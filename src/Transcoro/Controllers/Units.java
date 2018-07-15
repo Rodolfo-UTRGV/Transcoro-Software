@@ -16,10 +16,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -41,7 +46,7 @@ public class Units extends VBox {
     @FXML private TextField register_unitVIN;
     @FXML private ComboBox register_unitBrand;
     @FXML private ComboBox register_unitModel;
-    @FXML private DatePicker register_unitPurchaseDate;
+    @FXML public DatePicker register_unitPurchaseDate;
 
     public Units() {
         this.model = new Units_Model();
@@ -162,7 +167,9 @@ public class Units extends VBox {
         actionsBox.getChildren().add(sep2);
         actionsBox.getChildren().add(deleteButton);
 
-        EditUnitEvent editUnit = new EditUnitEvent();
+        // Pass the unit which the addUnit adds into the function editUnit.
+        // Values should be passed through once the unit has been added?
+        EditUnitEvent editUnit = new EditUnitEvent(unit);
         editButton.setOnAction(editUnit);
 
         DeleteUnitEvent deleteUnit = new DeleteUnitEvent(unit.getId(), row);
@@ -247,10 +254,74 @@ public class Units extends VBox {
      * View unit Event Class
      */
     class EditUnitEvent implements EventHandler<ActionEvent> {
-        @Override
+
+        private Unit unit;
+
         public void handle(ActionEvent event) {
+
+
+            Stage popUpWindow = new Stage();
+            popUpWindow.initModality(Modality.APPLICATION_MODAL);
+            popUpWindow.setTitle("This is a pop up window");
+            Label label1 = new Label("Pop up window now displayed");
+            Button button1 = new Button("Close this pop up window");
+            button1.setOnAction(e -> popUpWindow.close());
+            VBox layout = new VBox(10);
+
+            layout.setAlignment(Pos.CENTER);
+            GridPane infoPane = new GridPane();
+            infoPane.setHgap(50);
+            infoPane.setVgap(15);
+
+            TextField unitName = new TextField(String.valueOf(unit.getId()));
+            TextField unitPlates = new TextField(unit.getPlates());
+            TextField unitNIV = new TextField(unit.getVIN());
+            TextField unitBrand = new TextField(unit.getBrand());
+            TextField unitModel = new TextField(String.valueOf(unit.getModel()));
+
+
+
+
+
+            infoPane.add(new Label("No. de Unidad: "), 0, 0);
+            infoPane.add(unitName, 1, 0);
+
+            infoPane.add(new Label("Placas de Unidad: "), 0, 1);
+            infoPane.add(unitPlates, 1, 1);
+
+            infoPane.add(new Label("NIV: "), 0, 2);
+            infoPane.add(unitNIV, 1, 2);
+
+            infoPane.add(new Label("Marca: "), 0, 3);
+            infoPane.add(unitBrand, 1, 3);
+
+            infoPane.add(new Label("Modelo: "), 0, 4);
+            infoPane.add(unitModel, 1, 4);
+
+            // AQUI ESTA EL PEDO
+            // Lo que intente fue hacer lo contrario a lo que tu hiciste al crear y almacenar el valor de date cuando agregas la unidad
+            // Primero agarras el dato que ya habias agregado, lo metes en LocalDate y luego en el DatePicker, pero no se como ponerlo en un GridPane.
+            Date unitPurchaseDate = unit.getPurchaseDate();
+            LocalDate localPurchaseDate2 = new LocalDate(unitPurchaseDate); // Aqui :"v
+            DatePicker register_unitPurchaseDate = new DatePicker(localPurchaseDate2);
+
+            infoPane.add(new Label("Fecha de Compra: "), 0, 5);
+            infoPane.add(register_unitPurchaseDate, 1, 5);
+
+
+
+
+            layout.getChildren().addAll(label1, infoPane, button1);
+            Scene scene1 = new Scene(layout, 300, 250);
+            popUpWindow.setScene(scene1);
+            popUpWindow.showAndWait();
+        }
+
+        public EditUnitEvent(Unit unit) {
+            this.unit = unit;
         }
     }
+
 
     /**
      * Delete unit Event Class
