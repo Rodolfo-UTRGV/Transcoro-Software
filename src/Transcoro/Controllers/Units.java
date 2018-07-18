@@ -16,6 +16,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -256,32 +257,43 @@ public class Units extends VBox {
     class EditUnitEvent implements EventHandler<ActionEvent> {
 
         private Unit unit;
+        private TextField unitName;
+        private TextField unitPlates;
+        private TextField unitNIV;
+        private TextField unitBrand;
+        private TextField unitModel;
+        private Date unitPurchaseDate;
+        private Date unitNewPurchaseDate;
+        private LocalDate outputDate;
+        private DatePicker register_unitPurchaseDate;
 
         public void handle(ActionEvent event) {
 
 
             Stage popUpWindow = new Stage();
             popUpWindow.initModality(Modality.APPLICATION_MODAL);
-            popUpWindow.setTitle("This is a pop up window");
-            Label label1 = new Label("Pop up window now displayed");
-            Button button1 = new Button("Close this pop up window");
+            popUpWindow.setTitle("Edicion de la Unidad");
+            Label label1 = new Label("Edicion de la Unidad");
+            Button button1 = new Button("Cerrar");
             button1.setOnAction(e -> popUpWindow.close());
-            VBox layout = new VBox(10);
 
+            // Start the inside of the popup
+            VBox layout = new VBox(10);
             layout.setAlignment(Pos.CENTER);
             GridPane infoPane = new GridPane();
             infoPane.setHgap(50);
             infoPane.setVgap(15);
 
-            TextField unitName = new TextField(String.valueOf(unit.getId()));
-            TextField unitPlates = new TextField(unit.getPlates());
-            TextField unitNIV = new TextField(unit.getVIN());
-            TextField unitBrand = new TextField(unit.getBrand());
-            TextField unitModel = new TextField(String.valueOf(unit.getModel()));
-
-
-
-
+            unitName = new TextField(String.valueOf(unit.getId()));
+            unitName.setMaxWidth(50);
+            unitPlates = new TextField(unit.getPlates());
+            unitPlates.setMaxWidth(100);
+            unitNIV = new TextField(unit.getVIN());
+            unitNIV.setMaxWidth(50);
+            unitBrand = new TextField(unit.getBrand());
+            unitBrand.setMaxWidth(100);
+            unitModel = new TextField(String.valueOf(unit.getModel()));
+            unitModel.setMaxWidth(100);
 
             infoPane.add(new Label("No. de Unidad: "), 0, 0);
             infoPane.add(unitName, 1, 0);
@@ -298,21 +310,53 @@ public class Units extends VBox {
             infoPane.add(new Label("Modelo: "), 0, 4);
             infoPane.add(unitModel, 1, 4);
 
-            // AQUI ESTA EL PEDO
-            // Lo que intente fue hacer lo contrario a lo que tu hiciste al crear y almacenar el valor de date cuando agregas la unidad
-            // Primero agarras el dato que ya habias agregado, lo metes en LocalDate y luego en el DatePicker, pero no se como ponerlo en un GridPane.
-            Date unitPurchaseDate = unit.getPurchaseDate();
-            LocalDate localPurchaseDate2 = new LocalDate(unitPurchaseDate); // Aqui :"v
-            DatePicker register_unitPurchaseDate = new DatePicker(localPurchaseDate2);
 
+
+
+            unitPurchaseDate = unit.getPurchaseDate();
+            LocalDate localPurchaseDate = unitPurchaseDate.toLocalDate();
+            register_unitPurchaseDate = new DatePicker(localPurchaseDate);
+
+
+
+            register_unitPurchaseDate.setMaxWidth(100);
             infoPane.add(new Label("Fecha de Compra: "), 0, 5);
             infoPane.add(register_unitPurchaseDate, 1, 5);
 
+            Button button2 = new Button("Actualizar");
+
+            button2.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    System.out.println(" ----------------------- ");
+                    unit.setId(Integer.parseInt(unitName.getText()));
+                    System.out.println("New unit id: " + unit.getId());
+                    unit.setPlates(unitPlates.getText());
+                    System.out.println("New unit plates: " + unit.getPlates());
+                    unit.setVIN(unitNIV.getText());
+                    System.out.println("New unit NIV: " + unit.getVIN());
+                    unit.setBrand(unitBrand.getText());
+                    System.out.println("New unit brand: " + unit.getBrand());
+                    unit.setModel(Integer.parseInt(unitModel.getText()));
+                    System.out.println("New unit model: " + unit.getModel());
+                    outputDate = register_unitPurchaseDate.getValue();
+                    unitNewPurchaseDate = Date.valueOf(outputDate);
+                    unit.setPurchaseDate(unitNewPurchaseDate);
+                    System.out.println("New unit purchase date: " + unit.getPurchaseDate());
+                    System.out.println(" ----------------------- ");
+                }
+            });
+
+
+            HBox buttonBox = new HBox();
+            buttonBox.setSpacing(80);
+            buttonBox.setPadding(new Insets(20));
+            buttonBox.getChildren().addAll(button1,button2);
+            layout.getChildren().addAll(label1, infoPane, buttonBox);
 
 
 
-            layout.getChildren().addAll(label1, infoPane, button1);
-            Scene scene1 = new Scene(layout, 300, 250);
+            // PopUp Initialization
+            Scene scene1 = new Scene(layout, 300, 350);
             popUpWindow.setScene(scene1);
             popUpWindow.showAndWait();
         }
